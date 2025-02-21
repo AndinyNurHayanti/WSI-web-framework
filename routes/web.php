@@ -63,3 +63,44 @@ Route::get('search/{search}', function ($search) {
     return $search;
 })->where('search', '.*');
 
+//Acara 4
+// $url = route('profile');
+
+// return redirect()->route('profile');
+
+// Route::get('user/{id}/profile', function ($id) {
+    
+// })->name('profile');
+
+// $url = route('profile', ['id' => 1]);
+
+// Route::get('user/{id}/profile', function ($id) {
+//     //
+// })->name('profile');
+
+// $url = route('profile', ['id' => 1, 'photos' => 'yes']);
+
+Route::get('user/profile', function () {
+    return "Ini halaman profile";
+})->middleware('check.profile')->name('profile');
+
+Route::namespace('Admin')->group(function () {
+    // Semua controller dalam grup ini ada di namespace "App\Http\Controllers\Admin"
+});
+Route::domain('{account}.myapp.com')->group(function () {
+    Route::get('user/{id}', function ($account, $id) {
+        // Proses data berdasarkan akun dan ID
+    });
+});
+Route::prefix('admin')->group(function () {
+    Route::get('users', function () {
+        // Akan cocok dengan URL "/admin/users"
+    });
+});
+Route::prefix('admin')->group(function () {
+    Route::get('users', function () {
+        
+    })->name('users'); 
+});
+
+
