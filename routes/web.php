@@ -103,4 +103,6 @@ Route::prefix('admin')->group(function () {
     })->name('users'); 
 });
 
-
+//Acara 5
+Route::get('/user', [ManagementUserController::class, 'index']);
+Route::resource('/user','ManagementUserController');
