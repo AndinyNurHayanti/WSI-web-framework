@@ -18,7 +18,7 @@ use App\Http\Controllers\ManagementUserController;
 |
 */
 
-// Acara 3
+// ACARA 3
 Route::get('/', function () {
     return view('welcome');
 });
