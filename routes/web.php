@@ -40,3 +40,26 @@ Route::permanentRedirect('/here', '/there');
 
 Route::view('/welcome', 'welcome', ['name' => 'Andin']);
 
+// Route::get('user/{name?}', function ($name = null){
+//     return $name;
+// });
+Route::get('user/{name?}', function ($name = 'Andin'){
+    return $name;
+});
+
+// Route::get('user/{name?}', function ($name){
+
+// })->where('name', '[A-Za-z]+');
+
+Route::get('user/{id}', function ($id) {
+    return $id;
+})->where('id', '[0-9]+');
+
+Route::get('user/{id}/{name}', function ($id, $name) {
+    return "$id - $name";
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+
+Route::get('search/{search}', function ($search) {
+    return $search;
+})->where('search', '.*');
+
