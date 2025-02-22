@@ -13,6 +13,8 @@ class Kernel extends HttpKernel
      *
      * @var array<int, class-string|string>
      */
+
+     //Acara 4
     protected $routeMiddleware = [
         'check.profile' => \App\Http\Middleware\CheckProfileRoute::class,
     ];

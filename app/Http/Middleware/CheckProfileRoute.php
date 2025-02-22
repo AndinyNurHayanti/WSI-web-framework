@@ -10,6 +10,8 @@ class CheckProfileRoute
     /**
      * Handle an incoming request.
      */
+
+    //Acara 4
     public function handle(Request $request, Closure $next)
     {
         // Cek apakah route yang sedang diakses bernama 'profile'

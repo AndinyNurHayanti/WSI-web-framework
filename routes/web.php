@@ -36,6 +36,7 @@ Route::any('/any', function () {
     return 'siany';
 });
 
+
 Route::permanentRedirect('/here', '/there');
 
 Route::view('/welcome', 'welcome', ['name' => 'Andin']);
@@ -62,6 +63,7 @@ Route::get('user/{id}/{name}', function ($id, $name) {
 Route::get('search/{search}', function ($search) {
     return $search;
 })->where('search', '.*');
+
 
 //Acara 4
 // $url = route('profile');
@@ -106,3 +108,6 @@ Route::prefix('admin')->group(function () {
 //Acara 5
 Route::get('/user', [ManagementUserController::class, 'index']);
 Route::resource('/user','ManagementUserController');
+
+//Acara 6
+Route::get('/home', [ManagementUserController::class, 'index']);
