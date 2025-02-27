@@ -3,8 +3,12 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; 
-use App\Http\Controllers\HomeController; 
+// use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ManagementUserController; 
+use App\Http\Controllers\frontend\HomeController;
+
+
+
 
 
 /*
@@ -19,8 +23,8 @@ use App\Http\Controllers\ManagementUserController;
 */
 
 // ACARA 3
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', action: function () {
+    return view('index');
 });
 
 Route::get('foo', function () {
@@ -111,3 +115,6 @@ Route::resource('/user','ManagementUserController');
 
 //Acara 6
 Route::get('/home', [ManagementUserController::class, 'index']);
+
+// //Acara 7
+// Route::get('/home', [HomeController::class, 'index']);
