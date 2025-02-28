@@ -24,7 +24,7 @@ use App\Http\Controllers\frontend\HomeController;
 
 // ACARA 3
 Route::get('/', action: function () {
-    return view('index');
+    return view('backend');
 });
 
 Route::get('foo', function () {
