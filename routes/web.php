@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 // use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ManagementUserController; 
 use App\Http\Controllers\frontend\HomeController;
+use Illuminate\Support\Facades\DB;
+
 
 
 
@@ -24,7 +26,7 @@ use App\Http\Controllers\frontend\HomeController;
 
 // ACARA 3
 Route::get('/', action: function () {
-    return view('backend');
+    return view('welcome');
 });
 
 Route::get('foo', function () {
@@ -114,7 +116,20 @@ Route::get('/user', [ManagementUserController::class, 'index']);
 Route::resource('/user','ManagementUserController');
 
 //Acara 6
-Route::get('/home', [ManagementUserController::class, 'index']);
+// Route::get('/home', [ManagementUserController::class, 'index']);
 
 // //Acara 7
+Route::group(['namespace' => 'frontend'], function()
+    {
+        Route::resource('home', 'HomeController');
+    });
 // Route::get('/home', [HomeController::class, 'index']);
+// Route::get('/index', action: function () {
+//     return view('index');
+// });
+
+//Acara 8
+Route::group(['namespace' => 'backend'], function()
+    {
+        Route::resource('dashboard', 'DashboardController');
+    });
