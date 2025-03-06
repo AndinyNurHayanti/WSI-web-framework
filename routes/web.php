@@ -119,14 +119,14 @@ Route::resource('/user','ManagementUserController');
 // Route::get('/home', [ManagementUserController::class, 'index']);
 
 // //Acara 7
-Route::group(['namespace' => 'frontend'], function()
-    {
-        Route::resource('home', 'HomeController');
-    });
+// Route::group(['namespace' => 'frontend'], function()
+//     {
+//         Route::resource('home', 'HomeController');
+//     });
 // Route::get('/home', [HomeController::class, 'index']);
-// Route::get('/index', action: function () {
-//     return view('index');
-// });
+Route::get('/home', function () {
+    return view ('frontend/home');
+});
 
 //Acara 8
 Route::group(['namespace' => 'backend'], function()
