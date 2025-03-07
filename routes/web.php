@@ -6,7 +6,9 @@ use App\Http\Controllers\UserController;
 // use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\ManagementUserController; 
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\backend\DashboardController;
 use Illuminate\Support\Facades\DB;
+// use App\Http\Controllers\DashboardController;
 
 
 
@@ -129,7 +131,4 @@ Route::get('/home', function () {
 });
 
 //Acara 8
-Route::group(['namespace' => 'backend'], function()
-    {
-        Route::resource('dashboard', 'DashboardController');
-    });
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

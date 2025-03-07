@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
 
-use Illuminate\Http\Request,
-App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DashboardController extends Controller
-{
-    //Acara 8
-    public function index()
-    {
+class DashboardController extends Controller {
+    public function index() {
         return view('backend.dashboard');
     }
 }
+
