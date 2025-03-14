@@ -1,4 +1,4 @@
-<header id="header" class="header d-flex align-items-center sticky-top">
+<header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
@@ -14,6 +14,8 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
+          <li><a href="#blog">Blog</a></li> <!-- Menu Baru -->
+          <li><a href="#faq">FAQ</a></li> <!-- Menu Baru -->
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -37,4 +39,9 @@
       </nav>
 
     </div>
-  </header>
+</header>
+
+<!-- Tombol "Back to Top" -->
+<a href="#" id="backToTop" class="back-to-top d-flex align-items-center justify-content-center">
+  <i class="bi bi-arrow-up-short"></i>
+</a>
