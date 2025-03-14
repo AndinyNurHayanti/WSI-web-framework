@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 // use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Backend\PengalamanKerjaController;
 
 
 
@@ -141,3 +142,12 @@ Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
+//Acara 13
+Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
+    Route::resource('pengalaman_kerja', PengalamanKerjaController::class);
+    // Route::resource('pendidikan', PendidikanController::class);
+});
+
+
+

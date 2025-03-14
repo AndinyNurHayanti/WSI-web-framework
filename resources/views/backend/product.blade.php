@@ -1,6 +1,6 @@
 @extends('backend.layouts.template')
 
-@section('content-admin')
+@section('content')
     <div class="pagetitle">
         <h1>Blank Page</h1>
         <nav>

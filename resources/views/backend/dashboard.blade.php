@@ -1,6 +1,6 @@
 @extends('backend.layouts.template')
 
-@section('content-admin')
+@section('content')
     <div class="pagetitle">
         <h1>Dashboard</h1>
         <nav>
