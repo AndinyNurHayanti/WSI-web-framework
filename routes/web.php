@@ -13,6 +13,9 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Backend\PendidikanController;
 use App\Http\Controllers\Backend\PengalamanKerjaController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PegawaiController;
+
 
 
 /*
@@ -145,10 +148,17 @@ Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::resource('pengalaman_kerja', PengalamanKerjaController::class);
 });
 
-//Acara 15
+//Acara 15 dan 16
 Route::group(['namespace' => 'App\Http\Controllers\Backend'], function () {
     Route::resource('pendidikan', PendidikanController::class);
 });
 
-
+//Acara 17
+Route::get('/session/create', [SessionController::class, 'create']);
+Route::get('/session/show', [SessionController::class, 'show']);
+Route::get('/session/delete', [SessionController::class, 'delete']);
+Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+ 
+Route::get('/formulir', [PegawaiController::class, 'formulir']);
+Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
