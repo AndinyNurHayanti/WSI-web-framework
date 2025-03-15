@@ -1,15 +1,47 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> Request dengan Input Laravel</title>
-    </head>
-    <body>
-        <form action="/formulir/proses" method="post">
-            @csrf
+<head>
+    <title>Request dengan Input Laravel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Form Validation dengan Laravel</h1>
+                <form action="/formulir/proses" method="post">
+                    @csrf
 
-            Nama: <input type="text" name="nama"><br/>
-            Alamat : <input type="text" name="alamat"><br/>
-            <input type="submit" value="Simpan">
-        </form>
-    </body>
-    <html>
+                    <div class="form-group">
+                        <label for="nama" class="control-label">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" class="form-control 
+                            {{ $errors->has('nama') ? 'is-invalid' : '' }}" 
+                            placeholder="Nama Lengkap" value="{{ old('nama') }}">
+                        
+                        @if ($errors->has('nama'))
+                            <span class="text-danger small">
+                                <strong>{{ $errors->first('nama') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat" class="control-label">Alamat</label>
+                        <textarea rows="3" id="alamat" name="alamat" class="form-control 
+                            {{ $errors->has('alamat') ? 'is-invalid' : '' }}" 
+                            placeholder="Alamat Lengkap">{{ old('alamat') }}</textarea>
+
+                        @if ($errors->has('alamat'))
+                            <span class="text-danger small">
+                                <strong>{{ $errors->first('alamat') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+
+                    <input type="submit" value="Simpan" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

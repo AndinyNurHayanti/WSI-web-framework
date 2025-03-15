@@ -15,7 +15,7 @@ use App\Http\Controllers\Backend\PendidikanController;
 use App\Http\Controllers\Backend\PengalamanKerjaController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PegawaiController;
-
+use App\Http\Controllers\CobaController;
 
 
 /*
@@ -162,3 +162,5 @@ Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 Route::get('/formulir', [PegawaiController::class, 'formulir']);
 Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
+//Acara 18 
+Route::get('/cobaerror/{nama?}', [CobaController::class, 'index']);
