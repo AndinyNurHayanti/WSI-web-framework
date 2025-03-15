@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\StartSession;
 
 
 class AppServiceProvider extends ServiceProvider
